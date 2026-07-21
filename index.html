@@ -1,0 +1,392 @@
+<title>Thumka — Privacy Policy, Terms & Support</title>
+<style>
+  :root {
+    --bg: #F6F4F1;
+    --surface: #FFFFFF;
+    --ink: #18151F;
+    --muted: #6B6675;
+    --accent: #C8432E;
+    --accent-ink: #FFFFFF;
+    --rule: rgba(24,21,31,0.12);
+    --rule-strong: rgba(24,21,31,0.22);
+    --font-display: ui-serif, "Iowan Old Style", "Charter", Georgia, "Times New Roman", serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0B0B16;
+      --surface: #14121F;
+      --ink: #ECE9E4;
+      --muted: #9A94A6;
+      --accent: #F0664E;
+      --accent-ink: #17101A;
+      --rule: rgba(236,233,228,0.12);
+      --rule-strong: rgba(236,233,228,0.22);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0B0B16;
+    --surface: #14121F;
+    --ink: #ECE9E4;
+    --muted: #9A94A6;
+    --accent: #F0664E;
+    --accent-ink: #17101A;
+    --rule: rgba(236,233,228,0.12);
+    --rule-strong: rgba(236,233,228,0.22);
+  }
+  :root[data-theme="light"] {
+    --bg: #F6F4F1;
+    --surface: #FFFFFF;
+    --ink: #18151F;
+    --muted: #6B6675;
+    --accent: #C8432E;
+    --accent-ink: #FFFFFF;
+    --rule: rgba(24,21,31,0.12);
+    --rule-strong: rgba(24,21,31,0.22);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .wordmark {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .wordmark .dot { color: var(--accent); }
+  nav.tabs {
+    display: flex;
+    gap: 4px;
+    font-size: 0.88rem;
+  }
+  nav.tabs a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.01em;
+  }
+  nav.tabs a:hover { color: var(--ink); background: var(--rule); }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  .doc-header {
+    margin-bottom: 48px;
+  }
+  .eyebrow {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  h1.doc-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    line-height: 1.12;
+    margin: 0 0 8px;
+    text-wrap: balance;
+    font-weight: 600;
+  }
+  .doc-sub {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  section.doc {
+    padding-top: 64px;
+    margin-top: 8px;
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: 84px;
+  }
+  section.doc:first-of-type { border-top: none; padding-top: 0; }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2.2em 0 0.6em;
+    text-wrap: balance;
+  }
+  section.doc > h2:first-of-type { margin-top: 0; }
+  h3 {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    margin: 1.8em 0 0.5em;
+    color: var(--ink);
+  }
+  p, li { max-width: 65ch; }
+  p { margin: 0.9em 0; color: var(--ink); }
+  ul, ol { padding-left: 1.3em; margin: 0.9em 0; }
+  li { margin: 0.45em 0; }
+  strong { font-weight: 700; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 1.4em 0;
+  }
+  .card p:first-child { margin-top: 0; }
+  .card p:last-child { margin-bottom: 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2em 0;
+    font-size: 0.92rem;
+  }
+  .table-wrap { overflow-x: auto; }
+  th, td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  th {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .contact-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .contact-email {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 10px 18px;
+    border-radius: 999px;
+  }
+
+  .faq dt {
+    font-weight: 700;
+    margin-top: 1.2em;
+  }
+  .faq dd {
+    margin: 0.35em 0 0;
+    color: var(--muted);
+    max-width: 65ch;
+  }
+
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+</style>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="wordmark">Thumka<span class="dot">.</span></div>
+    <nav class="tabs" aria-label="Legal documents">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms of Use</a>
+      <a href="#support">Support</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+  <div class="doc-header">
+    <span class="eyebrow">Legal &amp; Support</span>
+    <h1 class="doc-title">Privacy, terms, and how to reach us</h1>
+    <p class="doc-sub">Thumka is a dance-practice app. This page covers what we collect, what you agree to, and how to get help — plainly, in one place.</p>
+  </div>
+
+  <section id="privacy" class="doc" aria-labelledby="privacy-h">
+    <span class="eyebrow">Document 1 of 3</span>
+    <h2 id="privacy-h">Privacy Policy</h2>
+    <p><em>Last updated: July 21, 2026</em></p>
+
+    <p>Thumka is built to work without an account. There's no sign-up, no profile, and no server holding your videos. This policy explains the little data that does exist, and where it goes.</p>
+
+    <h3>Your videos never leave your device</h3>
+    <p>Every video you import — from Photos, Files, a shared link, or a URL — is stored locally in the app's own storage on your phone. Thumka has no server to upload them to. We never see, receive, or store your videos.</p>
+
+    <h3>What we do collect</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Data</th><th>What it is</th><th>Linked to you?</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Usage &amp; feature events</td>
+            <td>Which features you use (slow-motion, mirror, loop, AI step breakdown), screen views, app opens — via Firebase Analytics.</td>
+            <td>No. No name, email, or account — just an anonymous device install.</td>
+          </tr>
+          <tr>
+            <td>Diagnostics</td>
+            <td>Crash reports and device/OS/app-version info, via Firebase Crashlytics — helps us fix bugs.</td>
+            <td>No.</td>
+          </tr>
+          <tr>
+            <td>Purchase status</td>
+            <td>Whether you've subscribed or bought Lifetime access, handled by RevenueCat and Apple's App Store.</td>
+            <td>Tied to your device's purchase history via Apple, not to your identity by us.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>We don't use this data for advertising, we don't sell it, and we don't share it with anyone except the two processors above (Firebase/Google and RevenueCat), strictly to run the app. Thumka does not use Apple's Advertising Identifier and does not request App Tracking Transparency permission, because we don't track you across other apps or websites.</p>
+
+    <h3>Payment information</h3>
+    <p>All purchases go through Apple's App Store. Thumka never sees or stores your card number, billing address, or any payment details — Apple handles that entirely.</p>
+
+    <h3>Your choices</h3>
+    <ul>
+      <li><strong>Delete your videos:</strong> Settings → Delete all videos, any time, right on your device.</li>
+      <li><strong>Delete or export your analytics data:</strong> email us (below) and we'll process the request.</li>
+      <li><strong>Turn off tracking entirely:</strong> delete the app — nothing is retained on any server tied to you, since nothing was ever sent to one under your identity.</li>
+    </ul>
+
+    <h3>Children</h3>
+    <p>Thumka isn't directed at children under 13, and we don't knowingly collect data from anyone under 13.</p>
+
+    <h3>Changes to this policy</h3>
+    <p>If this changes, we'll update the date above. Material changes will be reflected in the app's release notes.</p>
+  </section>
+
+  <section id="terms" class="doc" aria-labelledby="terms-h">
+    <span class="eyebrow">Document 2 of 3</span>
+    <h2 id="terms-h">Terms of Use</h2>
+    <p><em>Last updated: July 21, 2026</em></p>
+
+    <p>These terms supplement Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard End User License Agreement</a>, which also applies to your use of Thumka. Where the two conflict, Apple's EULA governs your license to use the app itself; these terms cover the specifics of Thumka's features and subscriptions.</p>
+
+    <h3>Using Thumka</h3>
+    <p>Thumka is licensed to you for personal, non-commercial use — importing and practicing with your own dance videos. You agree not to reverse-engineer, redistribute, or resell the app, and not to use it to process content you don't have the right to use.</p>
+
+    <h3>Your content stays yours</h3>
+    <p>Videos you import remain entirely your property. Thumka claims no rights over them — they're stored locally on your device and we never access them.</p>
+
+    <h3>Subscriptions &amp; purchases</h3>
+    <ul>
+      <li><strong>Monthly</strong> auto-renews until cancelled, billed through your Apple ID.</li>
+      <li><strong>Lifetime</strong> and <strong>Founding Lifetime</strong> are one-time purchases that unlock Pro features permanently on your Apple ID — they don't renew and can't expire.</li>
+      <li>Manage or cancel any subscription in iOS Settings → your name → Subscriptions. Refunds are handled by Apple under their own policies — Thumka doesn't process billing directly and can't issue refunds itself.</li>
+      <li>The Founding Lifetime price is offered to a limited number of early members and may be withdrawn for new purchases at any time; it never affects anyone who already bought it.</li>
+    </ul>
+
+    <h3>No warranty</h3>
+    <p>Thumka is provided "as is." We work to keep it reliable, but we don't guarantee it will be error-free or uninterrupted. To the extent allowed by law, Thumka isn't liable for indirect or incidental damages arising from your use of the app.</p>
+
+    <h3>Ending your use</h3>
+    <p>You can stop using Thumka at any time by deleting the app. We may suspend access for uses that violate these terms.</p>
+
+    <h3>Changes</h3>
+    <p>We may update these terms as the app evolves. Continuing to use Thumka after an update means you accept the revised terms.</p>
+  </section>
+
+  <section id="support" class="doc" aria-labelledby="support-h">
+    <span class="eyebrow">Document 3 of 3</span>
+    <h2 id="support-h">Support</h2>
+
+    <div class="card contact-block">
+      <div>
+        <div class="contact-email">support@thumka.app</div>
+        <p style="margin-top:4px;">Usually a reply within a day or two.</p>
+      </div>
+      <a class="btn" href="mailto:support@thumka.app">Email us →</a>
+    </div>
+
+    <h3>Common questions</h3>
+    <dl class="faq">
+      <dt>Does my dance video ever leave my phone?</dt>
+      <dd>No. Everything is stored locally in the app. There's no server to upload to.</dd>
+
+      <dt>How do I cancel my subscription?</dt>
+      <dd>iOS Settings → your name → Subscriptions → Thumka → Cancel. It stays active until the current billing period ends.</dd>
+
+      <dt>I bought Lifetime — will I ever be charged again?</dt>
+      <dd>No. Lifetime and Founding Lifetime are one-time purchases with no renewal.</dd>
+
+      <dt>How do I get my free 5 videos back / reset my trial?</dt>
+      <dd>The free limit is tied to your device, by design, so it can't be reset by reinstalling the app. Subscribing or buying Lifetime removes the limit entirely.</dd>
+
+      <dt>How do I delete all my videos?</dt>
+      <dd>Settings → Delete all videos.</dd>
+
+      <dt>How do I request my analytics data be deleted?</dt>
+      <dd>Email support@thumka.app — we'll process it promptly.</dd>
+    </dl>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Thumka. All rights reserved.</span>
+  <span>Last updated July 21, 2026</span>
+</footer>
