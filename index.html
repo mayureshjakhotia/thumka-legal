@@ -268,12 +268,12 @@
   <section id="privacy" class="doc" aria-labelledby="privacy-h">
     <span class="eyebrow">Document 1 of 3</span>
     <h2 id="privacy-h">Privacy Policy</h2>
-    <p><em>Last updated: July 31, 2026</em></p>
+    <p><em>Last updated: August 5, 2026</em></p>
 
-    <p>Thumka is built to work without an account. There's no sign-up, no profile, and no server holding your videos. This policy explains the little data that does exist, and where it goes.</p>
+    <p>Thumka works without an account. There is no sign-up, no login, no profile, and no server holding your videos. Thumka does not create an identifier for you, and does not ask for your name, email, or phone number. This policy explains the little data that does exist, and where it goes.</p>
 
     <h3>Your videos never leave your device</h3>
-    <p>Every video you import — from Photos, Files, a shared link, or a URL — is stored locally in the app's own storage on your phone. Thumka has no server to upload them to. We never see, receive, or store your videos.</p>
+    <p>Every video you import — from your photo library, your files, a share from another app, or a direct link — is stored locally in Thumka's own storage on your phone. So is everything you do with it: notes, loop sections, practice status, practice time, and your streak. Thumka has no server to upload any of it to. We never see, receive, or store your videos or your practice data.</p>
 
     <h3>What we do collect</h3>
     <div class="table-wrap">
@@ -284,45 +284,47 @@
         <tbody>
           <tr>
             <td>Usage &amp; feature events</td>
-            <td>Which features you use (slow-motion, mirror, loop, AI step breakdown), screen views, app opens — via Firebase Analytics.</td>
-            <td>To a Support ID, not to you. See the row below.</td>
-          </tr>
-          <tr>
-            <td>Support ID</td>
-            <td>A random code generated on your device the first time you open Thumka (for example <code>THUMKA-4F2A-9C71</code>). You can see it in Settings &rarr; Account. It lets us tell one install's activity apart from another's, and it's what identifies your purchases to RevenueCat.</td>
-            <td>It is not derived from your name, email, phone, or any device or advertising identifier &mdash; it's a random number. On its own it can't be traced back to you.</td>
-          </tr>
-          <tr>
-            <td>Email address <em>(optional)</em></td>
-            <td>Only if you type one into Settings &rarr; Account. It is sent to RevenueCat and attached to your Support ID, so that if a purchase goes wrong we can find your account and fix it. It is <strong>never</strong> sent to Firebase Analytics, never used for marketing, and we don't email you unless you email us first.</td>
-            <td>Yes &mdash; that's the point of it. Leave it blank and nothing about you is collected. Clear it any time in the same screen and it's removed from RevenueCat.</td>
+            <td>Which features you use (slow-motion, mirror, loop, AI step breakdown), screen views, app opens — via Firebase Analytics. Alongside them we record four coarse properties: whether you are on the free or paid tier, roughly how many videos are in your library, your streak length, and your chosen theme.</td>
+            <td>No. Thumka does not set a user ID on Firebase Analytics, so these events are not tied to a person by us.</td>
           </tr>
           <tr>
             <td>Diagnostics</td>
-            <td>Crash reports and device/OS/app-version info, via Firebase Crashlytics — helps us fix bugs.</td>
-            <td>No.</td>
+            <td>Crash reports and device / OS / app-version information, via Firebase Crashlytics — this is how bugs get found and fixed.</td>
+            <td>No. Thumka does not set a user ID on Crashlytics either.</td>
           </tr>
           <tr>
-            <td>Purchase status</td>
-            <td>Whether you've subscribed or bought Lifetime access, handled by RevenueCat and Apple's App Store.</td>
-            <td>Tied to your device's purchase history via Apple, not to your identity by us.</td>
+            <td>Configuration</td>
+            <td>Firebase Remote Config, which Thumka reads to decide things like whether the founding-member price is still on offer. Reading it involves a Firebase installation identifier, which Google generates for the app on your device.</td>
+            <td>No. It identifies an installation, not a person, and it is not combined with anything else.</td>
+          </tr>
+          <tr>
+            <td>Purchase records</td>
+            <td>Whether Pro is active on this device. Purchases are processed by Apple's App Store or Google Play and recorded by RevenueCat, our billing provider, under an <strong>anonymous ID that RevenueCat generates itself</strong> (it looks like <code>$RCAnonymousID:…</code>). Thumka does not choose or supply that ID and does not attach an email or any other detail to it.</td>
+            <td>Not by us. Apple or Google knows the purchase belongs to your store account, because they took the payment. RevenueCat sees only the anonymous ID and the store receipt.</td>
+          </tr>
+          <tr>
+            <td>Free-import count</td>
+            <td>A single number: how many videos have ever been imported on this device. It is stored on the device only, never transmitted, and exists so the five free imports cannot be reset over and over by reinstalling. It counts up and is never reduced.</td>
+            <td>No. It is a number on your phone, not a record anywhere else.</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <p>We never sell your data, never use it for advertising, and never share it with anyone except the two processors above (Firebase/Google and RevenueCat), strictly to run the app. We don't use this data for advertising, we don't sell it, and we don't share it with anyone except the two processors above (Firebase/Google and RevenueCat), strictly to run the app. Thumka does not use Apple's Advertising Identifier and does not request App Tracking Transparency permission, because we don't track you across other apps or websites.</p>
+    <p>We never sell your data, never use it for advertising, and never share it with anyone except the two processors above (Firebase/Google and RevenueCat), strictly to run the app. Thumka does not use Apple's Advertising Identifier or Android's Advertising ID, and does not request App Tracking Transparency permission, because we do not track you across other apps or websites.</p>
+
+    <h3>Support requests</h3>
+    <p>Thumka has no ticket system and stores no email address. When you tap <strong>Email support</strong> in Settings, Thumka opens a draft in your own email app, pre-filled with your app version, your platform, and the anonymous billing ID described above — the last of these is the only way to find a purchase that has gone wrong, since there is no account to look you up by. <strong>Nothing is sent automatically.</strong> You can read the draft, edit it, delete any of those lines, or discard it. If you do send it, we then have your email address in our inbox, in the ordinary way that emailing someone gives them your address.</p>
 
     <h3>Payment information</h3>
-    <p>All purchases go through Apple's App Store. Thumka never sees or stores your card number, billing address, or any payment details — Apple handles that entirely.</p>
+    <p>All purchases go through Apple's App Store or Google Play. Thumka never sees or stores your card number, billing address, or any payment details — the stores handle that entirely.</p>
 
     <h3>Your choices</h3>
     <ul>
-      <li><strong>Delete your videos:</strong> Settings → Delete all videos, any time, right on your device.</li>
-      <li><strong>Delete or export your analytics data:</strong> email us (below) and we'll process the request.</li>
-      <li><strong>Remove your email:</strong> Settings &rarr; Account &rarr; clear the field and tap Remove email. Your Support ID stays, your email does not.</li>
-      <li><strong>Turn off analytics:</strong> Settings &rarr; Privacy. Nothing further is collected, including the Support ID.</li>
-      <li><strong>Turn off tracking entirely:</strong> delete the app.</li>
+      <li><strong>Delete your videos and practice data:</strong> Settings &rarr; Delete Library &amp; Practice Data, any time, right on your device. This removes the videos stored on the device along with your notes, loop sections and practice history. It does <em>not</em> cancel a purchase, and it does <em>not</em> reset the free-import count.</li>
+      <li><strong>Turn off analytics:</strong> Settings &rarr; Privacy. Nothing further is collected after that.</li>
+      <li><strong>Stop everything:</strong> delete the app.</li>
+      <li><strong>Ask about data already collected:</strong> email us (below). Records already held by Apple, Google, RevenueCat or Firebase live in those companies' systems, not inside Thumka, so the app itself cannot reach in and erase them — but tell us what you need and we will make the request we are able to make.</li>
     </ul>
 
     <h3>Children</h3>
@@ -335,9 +337,9 @@
   <section id="terms" class="doc" aria-labelledby="terms-h">
     <span class="eyebrow">Document 2 of 3</span>
     <h2 id="terms-h">Terms of Use</h2>
-    <p><em>Last updated: July 31, 2026</em></p>
+    <p><em>Last updated: August 5, 2026</em></p>
 
-    <p>These terms supplement Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard End User License Agreement</a>, which also applies to your use of Thumka. Where the two conflict, Apple's EULA governs your license to use the app itself; these terms cover the specifics of Thumka's features and subscriptions.</p>
+    <p>On iPhone and iPad these terms supplement Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard End User License Agreement</a>, which also applies to your use of Thumka; where the two conflict, Apple's EULA governs your license to use the app itself. On Android, Google Play's terms apply in the same way. These terms cover the specifics of Thumka's features and purchases.</p>
 
     <h3>Using Thumka</h3>
     <p>Thumka is licensed to you for personal, non-commercial use — importing and practicing with your own dance videos. You agree not to reverse-engineer, redistribute, or resell the app, and not to use it to process content you don't have the right to use.</p>
@@ -345,11 +347,17 @@
     <h3>Your content stays yours</h3>
     <p>Videos you import remain entirely your property. Thumka claims no rights over them — they're stored locally on your device and we never access them.</p>
 
-    <h3>Subscriptions &amp; purchases</h3>
+    <h3>The free allowance</h3>
+    <p>Thumka is free to use for your first five video <em>imports</em> on a device. Imports, not videos: the count goes up when an import succeeds and never comes back down, so deleting a video does not return an import. A cancelled or failed import doesn't count, and the sample clip Thumka ships with doesn't either. The count is stored on the device and is not reset by reinstalling. Pro removes the limit.</p>
+    <p>This is a permanent free allowance, not a trial. Nothing expires and nothing starts billing you on its own.</p>
+
+    <h3>Purchases</h3>
     <ul>
-      <li><strong>Monthly</strong> auto-renews until cancelled, billed through your Apple ID.</li>
-      <li><strong>Lifetime</strong> and <strong>Founding Lifetime</strong> are one-time purchases that unlock Pro features permanently on your Apple ID — they don't renew and can't expire.</li>
-      <li>Manage or cancel any subscription in iOS Settings → your name → Subscriptions. Refunds are handled by Apple under their own policies — Thumka doesn't process billing directly and can't issue refunds itself.</li>
+      <li><strong>Monthly</strong> auto-renews until cancelled, billed through your Apple ID or Google account.</li>
+      <li><strong>Lifetime</strong> and <strong>Founding Lifetime</strong> are one-time purchases that unlock Pro permanently — they don't renew and can't expire.</li>
+      <li><strong>Purchases are specific to the platform you bought on.</strong> Thumka has no account system, so there is nothing to carry a purchase between the two stores: buying on Android unlocks Pro on Android, and buying on iPhone unlocks Pro on iPhone. Buying it once does not unlock the other platform.</li>
+      <li>You can restore a purchase on another device <strong>of the same platform</strong>, as long as it is signed in to the Apple ID or Google account that bought it: Settings &rarr; Restore purchases. Restoring never charges you again.</li>
+      <li>Manage or cancel a subscription in iOS Settings &rarr; your name &rarr; Subscriptions, or in the Google Play Store &rarr; Payments &amp; subscriptions. Refunds are handled by Apple or Google under their own policies — Thumka doesn't process billing directly and can't issue refunds itself.</li>
       <li>The Founding Lifetime price is offered to a limited number of early members and may be withdrawn for new purchases at any time; it never affects anyone who already bought it.</li>
     </ul>
 
@@ -375,30 +383,41 @@
       <a class="btn" href="mailto:superstarmayuresh@gmail.com">Email us →</a>
     </div>
 
+    <p>Thumka has no account and no support queue — just this address. Tapping <strong>Email support</strong> in Settings opens a draft in your own email app with your app version and an anonymous billing reference already filled in, which is what lets us find a purchase. Nothing is sent until you send it, and you can delete those lines first.</p>
+
     <h3>Common questions</h3>
     <dl class="faq">
       <dt>Does my dance video ever leave my phone?</dt>
       <dd>No. Everything is stored locally in the app. There's no server to upload to.</dd>
 
+      <dt>Do I need an account?</dt>
+      <dd>There isn't one. No sign-up, no login, no password, nothing to lose access to.</dd>
+
+      <dt>I bought Pro on Android. Do I get it on my iPhone too?</dt>
+      <dd>No. Purchases are specific to the store you bought from, because Thumka has no account to carry them across. An Android purchase unlocks Pro on Android; an iPhone purchase unlocks Pro on iPhone.</dd>
+
+      <dt>I got a new phone. How do I get Pro back?</dt>
+      <dd>Sign in to the same Apple ID or Google account you bought with, then Settings &rarr; Restore purchases. You won't be charged again. This works between devices on the same platform.</dd>
+
       <dt>How do I cancel my subscription?</dt>
-      <dd>iOS Settings → your name → Subscriptions → Thumka → Cancel. It stays active until the current billing period ends.</dd>
+      <dd>iPhone: Settings &rarr; your name &rarr; Subscriptions &rarr; Thumka &rarr; Cancel. Android: Play Store &rarr; Payments &amp; subscriptions &rarr; Thumka &rarr; Cancel. It stays active until the current billing period ends.</dd>
 
       <dt>I bought Lifetime — will I ever be charged again?</dt>
       <dd>No. Lifetime and Founding Lifetime are one-time purchases with no renewal.</dd>
 
-      <dt>How do I get my free 5 videos back / reset my trial?</dt>
-      <dd>The free limit is tied to your device, by design, so it can't be reset by reinstalling the app. Subscribing or buying Lifetime removes the limit entirely.</dd>
+      <dt>How do I get my five free imports back?</dt>
+      <dd>You can't, and that's deliberate. The count is tied to the device and never goes down, so deleting videos, clearing app data or reinstalling won't reset it. Pro removes the limit entirely.</dd>
 
-      <dt>How do I delete all my videos?</dt>
-      <dd>Settings → Delete all videos.</dd>
+      <dt>How do I delete my videos and practice data?</dt>
+      <dd>Settings &rarr; Delete Library &amp; Practice Data. It removes the videos on the device plus your notes, loop sections and practice history. Your purchase is unaffected, and the free-import count stays where it is.</dd>
 
       <dt>How do I request my analytics data be deleted?</dt>
-      <dd>Email superstarmayuresh@gmail.com — we'll process it promptly.</dd>
+      <dd>Email superstarmayuresh@gmail.com and tell us what you need. Data held by Apple, Google, RevenueCat or Firebase sits in their systems rather than inside Thumka, so the app can't erase it directly — we'll make the request we're able to make on your behalf.</dd>
     </dl>
   </section>
 </main>
 
 <footer>
   <span>© 2026 Thumka. All rights reserved.</span>
-  <span>Last updated July 31, 2026</span>
+  <span>Last updated August 5 2026</span>
 </footer>
