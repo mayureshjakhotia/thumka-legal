@@ -268,9 +268,9 @@
   <section id="privacy" class="doc" aria-labelledby="privacy-h">
     <span class="eyebrow">Document 1 of 3</span>
     <h2 id="privacy-h">Privacy Policy</h2>
-    <p><em>Last updated: August 5, 2026</em></p>
+    <p><em>Last updated: August 6, 2026</em></p>
 
-    <p>Thumka works without an account. There is no sign-up, no login, no profile, and no server holding your videos. Thumka does not create an identifier for you, and does not ask for your name, email, or phone number. This policy explains the little data that does exist, and where it goes.</p>
+    <p>Thumka works without an account. There is no sign-up, no login, no profile, and no server holding your videos. Thumka does not ask for your name, email, or phone number. This policy explains the little data that does exist, and where it goes.</p>
 
     <h3>Your videos never leave your device</h3>
     <p>Every video you import — from your photo library, your files, a share from another app, or a direct link — is stored locally in Thumka's own storage on your phone. So is everything you do with it: notes, loop sections, practice status, practice time, and your streak. Thumka has no server to upload any of it to. We never see, receive, or store your videos or your practice data.</p>
@@ -303,9 +303,9 @@
             <td>Not by us. Apple or Google knows the purchase belongs to your store account, because they took the payment. RevenueCat sees only the anonymous ID and the store receipt.</td>
           </tr>
           <tr>
-            <td>Free-import count</td>
-            <td>A single number: how many videos have ever been imported on this device. It is stored on the device only, never transmitted, and exists so the five free imports cannot be reset over and over by reinstalling. It counts up and is never reduced.</td>
-            <td>No. It is a number on your phone, not a record anywhere else.</td>
+            <td>Free-import count and app-scoped device ID</td>
+            <td>A single number: how many videos have ever been imported on this device. It exists so the five free imports cannot be reset by deleting and reinstalling the app. On iOS the count stays on the device. On Android, Thumka sends the app-scoped Android device ID with a Google Play Integrity token to our quota service. The service immediately converts the ID into a one-way keyed value and stores only that value, the count, and random retry IDs — never the raw device ID, video, filename, or URL.</td>
+            <td>Not to your name or contact details. The Android record distinguishes one device for fraud prevention, and Google verifies that the request comes from the genuine Play-installed app on a recognized device.</td>
           </tr>
         </tbody>
       </table>
@@ -323,7 +323,7 @@
     <ul>
       <li><strong>Delete your videos and practice data:</strong> Settings &rarr; Delete Library &amp; Practice Data, any time, right on your device. This removes the videos stored on the device along with your notes, loop sections and practice history. It does <em>not</em> cancel a purchase, and it does <em>not</em> reset the free-import count.</li>
       <li><strong>Turn off analytics:</strong> Settings &rarr; Privacy. Nothing further is collected after that.</li>
-      <li><strong>Stop everything:</strong> delete the app.</li>
+      <li><strong>Stop future collection:</strong> delete the app. On Android, the one-way device quota record remains so reinstalling cannot reset the free allowance.</li>
       <li><strong>Ask about data already collected:</strong> email us (below). Records already held by Apple, Google, RevenueCat or Firebase live in those companies' systems, not inside Thumka, so the app itself cannot reach in and erase them — but tell us what you need and we will make the request we are able to make.</li>
     </ul>
 
@@ -348,7 +348,7 @@
     <p>Videos you import remain entirely your property. Thumka claims no rights over them — they're stored locally on your device and we never access them.</p>
 
     <h3>The free allowance</h3>
-    <p>Thumka is free to use for your first five video <em>imports</em> on a device. Imports, not videos: the count goes up when an import succeeds and never comes back down, so deleting a video does not return an import. A cancelled or failed import doesn't count, and the sample clip Thumka ships with doesn't either. The count is stored on the device and is not reset by reinstalling. Pro removes the limit.</p>
+    <p>Thumka is free to use for your first five video <em>imports</em> on a device. Imports, not videos: the count goes up when an import succeeds and never comes back down, so deleting a video does not return an import. A cancelled or failed import doesn't count, and the sample clip Thumka ships with doesn't either. The count is kept locally on iOS and by Thumka's protected quota service on Android, and is not reset by reinstalling. Pro removes the limit.</p>
     <p>This is a permanent free allowance, not a trial. Nothing expires and nothing starts billing you on its own.</p>
 
     <h3>Purchases</h3>
