@@ -273,7 +273,7 @@
     <p>Thumka works without an account. There is no sign-up, no login, no profile, and no server holding your videos. Thumka does not ask for your name, email, or phone number. This policy explains the little data that does exist, and where it goes.</p>
 
     <h3>Your videos never leave your device</h3>
-    <p>Every video you import — from your photo library, your files, a share from another app, or a direct link — is stored locally in Thumka's own storage on your phone. So is everything you do with it: notes, loop sections, practice status, practice time, and your streak. Thumka has no server to upload any of it to. We never see, receive, or store your videos or your practice data.</p>
+    <p>Every video you import — from your photo library, your files, a share from another app, or a direct link — is stored locally in Thumka's own storage on your device. Your video content, filenames, URLs, notes, loop boundaries, AI pose results, and exact practice history are never uploaded to Thumka or Firebase. Thumka does send the limited, coarse product analytics described below, such as whether a feature was used and a bucketed session duration, but never the content you practiced with.</p>
 
     <h3>What we do collect</h3>
     <div class="table-wrap">
@@ -284,17 +284,17 @@
         <tbody>
           <tr>
             <td>Usage &amp; feature events</td>
-            <td>Where Firebase is configured, Thumka may send feature events, screen views, app opens, and coarse app properties to Firebase Analytics. The current iOS release does not connect to Firebase. It keeps a small recent activity log only on the device so you can choose to include a sanitized version in a support email.</td>
-            <td>We do not set an account ID, name, email address, advertising ID, filename, or video URL. Where Firebase is configured, Firebase generates an app-instance or installation identifier, so the data is pseudonymous rather than strictly anonymous.</td>
+            <td>Thumka sends bounded product events to Google Analytics for Firebase: app opens and sessions; screen and feature use; regular Player and AI Steps use; coarse session-duration and completion buckets; import, recording and purchase outcomes; selected app settings; coarse local hour, weekday and UTC offset; and serious or critical thermal-pressure events. Firebase also supplies standard device model, OS, app version and coarse region dimensions. A small sanitized recent-activity log remains on the device for an optional support attachment.</td>
+            <td>Linked only to a Firebase-generated app-instance or installation identifier, not to a Thumka account. Thumka does not set a user ID or send a name, email, advertising identifier, RevenueCat billing ID, filename, video ID, URL, media, pose result, exact playback position, or free-form error. The data is therefore pseudonymous rather than literally anonymous.</td>
           </tr>
           <tr>
             <td>Diagnostics</td>
-            <td>Where Firebase is configured, Thumka may send crash reports and device, OS, and app-version information through Firebase Crashlytics. The current iOS release does not connect to Crashlytics.</td>
-            <td>We do not set an account ID on Crashlytics. Firebase may still associate reports with an app installation.</td>
+            <td>The current iOS release does not use Firebase Crashlytics and does not automatically upload Thumka crash stack traces. Apple may provide Thumka with aggregated, opt-in App Store diagnostics under Apple's own privacy controls. A support report sends diagnostics only when you deliberately choose to send it.</td>
+            <td>The optional support attachment is associated with the email you choose to send. It is not sent in the background and can be removed before sending.</td>
           </tr>
           <tr>
             <td>Configuration</td>
-            <td>Where Firebase is configured, Thumka may read Firebase Remote Config for app settings such as offer availability. Reading it involves a Firebase installation identifier generated for the app on your device. The current iOS release uses its bundled fallback settings because Firebase is not configured.</td>
+            <td>Thumka may read Firebase Remote Config for app settings such as offer availability. Reading it involves a Firebase installation identifier generated for the app on your device. If Remote Config is unavailable, Thumka uses bundled fallback settings.</td>
             <td>It identifies an app installation rather than an account or contact identity.</td>
           </tr>
           <tr>
