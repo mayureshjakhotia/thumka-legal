@@ -273,7 +273,7 @@
     <p>Thumka works without an account. There is no sign-up, no login, no profile, and no server holding your videos. Thumka does not ask for your name, email, or phone number. This policy explains the little data that does exist, and where it goes.</p>
 
     <h3>Your videos never leave your device</h3>
-    <p>Every video you import — from your photo library, your files, a share from another app, or a direct link — is stored locally in Thumka's own storage on your device. Your video content, filenames, URLs, notes, loop boundaries, AI pose results, and exact practice history are never uploaded to Thumka or Firebase. Thumka does send the limited, coarse product analytics described below, such as whether a feature was used and a bucketed session duration, but never the content you practiced with.</p>
+    <p>Every video you import — from your photo library, your files, a share from another app, or a direct link — is stored locally in Thumka's own storage on your device. Your video content, filenames, URLs, notes, loop boundaries, AI pose results, and exact practice history are never uploaded to Thumka or Firebase. The current iOS release does not upload product analytics. It keeps only a small sanitized activity log on the device for an optional support attachment.</p>
 
     <h3>What we do collect</h3>
     <div class="table-wrap">
@@ -284,8 +284,8 @@
         <tbody>
           <tr>
             <td>Usage &amp; feature events</td>
-            <td>Thumka sends bounded product events to Google Analytics for Firebase: app opens and sessions; screen and feature use; regular Player and AI Steps use; coarse session-duration and completion buckets; import, recording and purchase outcomes; selected app settings; coarse local hour, weekday and UTC offset; and serious or critical thermal-pressure events. Firebase also supplies standard device model, OS, app version and coarse region dimensions. A small sanitized recent-activity log remains on the device for an optional support attachment.</td>
-            <td>Linked only to a Firebase-generated app-instance or installation identifier, not to a Thumka account. Thumka does not set a user ID or send a name, email, advertising identifier, RevenueCat billing ID, filename, video ID, URL, media, pose result, exact playback position, or free-form error. The data is therefore pseudonymous rather than literally anonymous.</td>
+            <td>On iOS 1.2.1, Firebase Analytics is not configured and no usage or feature event is uploaded to Google. A small sanitized recent-activity log stays on the device and is available only as an optional support attachment. On another platform where Firebase is configured, Thumka may send bounded events such as app sessions, screen and feature use, coarse duration buckets, purchase outcomes and selected settings.</td>
+            <td>For the current iOS release, the log is not transmitted unless you deliberately attach it to a support email. Where Firebase is configured on another platform, events may be associated with a Firebase-generated app-instance identifier, never a Thumka account, name, email, advertising identifier, RevenueCat billing ID, filename, video ID, URL, media or pose result.</td>
           </tr>
           <tr>
             <td>Diagnostics</td>
@@ -294,8 +294,8 @@
           </tr>
           <tr>
             <td>Configuration</td>
-            <td>Thumka may read Firebase Remote Config for app settings such as offer availability. Reading it involves a Firebase installation identifier generated for the app on your device. If Remote Config is unavailable, Thumka uses bundled fallback settings.</td>
-            <td>It identifies an app installation rather than an account or contact identity.</td>
+            <td>The current iOS release does not configure Firebase Remote Config and uses bundled fallback settings, so it creates no Firebase installation identifier or config fetch. Another platform may use Remote Config where its Firebase setup is enabled.</td>
+            <td>No Firebase configuration data is transmitted by the current iOS release.</td>
           </tr>
           <tr>
             <td>Purchase records</td>
@@ -323,8 +323,8 @@
     <ul>
       <li><strong>Delete your videos and practice data:</strong> Settings &rarr; Delete Library &amp; Practice Data, any time, right on your device. This removes the videos stored on the device along with your notes, loop sections and practice history. It does <em>not</em> cancel a purchase, and it does <em>not</em> reset the free-import count.</li>
       <li><strong>Control support diagnostics:</strong> the support message and attachment are visible before sending. You can edit the message, remove the attachment, or discard the report.</li>
-      <li><strong>Stop future collection:</strong> delete the app. On Android, the one-way device quota record remains so reinstalling cannot reset the free allowance.</li>
-      <li><strong>Ask about data already collected:</strong> email us (below). Records already held by Apple, Google, RevenueCat or Firebase where enabled live in those companies' systems, not inside Thumka, so the app itself cannot reach in and erase them — but tell us what you need and we will make the request we are able to make.</li>
+      <li><strong>Usage analytics on iOS:</strong> the current iOS release sends no usage analytics to Firebase. Deleting the app removes its local support log. On Android, the one-way device quota record remains so reinstalling cannot reset the free allowance.</li>
+      <li><strong>Ask about data already collected:</strong> email us (below). Purchase or support records already held by Apple, Google, RevenueCat or your email provider live in those companies' systems, not inside Thumka, so the app itself cannot reach in and erase them — but tell us what you need and we will make the request we are able to make.</li>
     </ul>
 
     <h3>Children</h3>
@@ -411,8 +411,8 @@
       <dt>How do I delete my videos and practice data?</dt>
       <dd>Settings &rarr; Delete Library &amp; Practice Data. It removes the videos on the device plus your notes, loop sections and practice history. Your purchase is unaffected, and the free-import count stays where it is.</dd>
 
-      <dt>How do I request my analytics data be deleted?</dt>
-      <dd>Email jakhotiamayuresh@gmail.com and tell us what you need. Data held by Apple, Google, RevenueCat or Firebase sits in their systems rather than inside Thumka, so the app can't erase it directly — we'll make the request we're able to make on your behalf.</dd>
+      <dt>Does the iPhone app send usage analytics?</dt>
+      <dd>No. The current iOS release does not configure Firebase Analytics or Remote Config. Its sanitized activity log stays on the phone unless you deliberately attach it to a support email.</dd>
     </dl>
   </section>
 </main>
