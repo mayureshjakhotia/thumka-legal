@@ -284,18 +284,18 @@
         <tbody>
           <tr>
             <td>Usage &amp; feature events</td>
-            <td>Which features you use (slow-motion, mirror, loop, AI step breakdown), screen views, app opens — via Firebase Analytics. Alongside them we record four coarse properties: whether you are on the free or paid tier, roughly how many videos are in your library, your streak length, and your chosen theme.</td>
-            <td>No. Thumka does not set a user ID on Firebase Analytics, so these events are not tied to a person by us.</td>
+            <td>Where Firebase is configured, Thumka may send feature events, screen views, app opens, and coarse app properties to Firebase Analytics. The current iOS release does not connect to Firebase. It keeps a small recent activity log only on the device so you can choose to include a sanitized version in a support email.</td>
+            <td>We do not set an account ID, name, email address, advertising ID, filename, or video URL. Where Firebase is configured, Firebase generates an app-instance or installation identifier, so the data is pseudonymous rather than strictly anonymous.</td>
           </tr>
           <tr>
             <td>Diagnostics</td>
-            <td>Crash reports and device / OS / app-version information, via Firebase Crashlytics — this is how bugs get found and fixed.</td>
-            <td>No. Thumka does not set a user ID on Crashlytics either.</td>
+            <td>Where Firebase is configured, Thumka may send crash reports and device, OS, and app-version information through Firebase Crashlytics. The current iOS release does not connect to Crashlytics.</td>
+            <td>We do not set an account ID on Crashlytics. Firebase may still associate reports with an app installation.</td>
           </tr>
           <tr>
             <td>Configuration</td>
-            <td>Firebase Remote Config, which Thumka reads to decide things like whether the founding-member price is still on offer. Reading it involves a Firebase installation identifier, which Google generates for the app on your device.</td>
-            <td>No. It identifies an installation, not a person, and it is not combined with anything else.</td>
+            <td>Where Firebase is configured, Thumka may read Firebase Remote Config for app settings such as offer availability. Reading it involves a Firebase installation identifier generated for the app on your device. The current iOS release uses its bundled fallback settings because Firebase is not configured.</td>
+            <td>It identifies an app installation rather than an account or contact identity.</td>
           </tr>
           <tr>
             <td>Purchase records</td>
@@ -311,7 +311,7 @@
       </table>
     </div>
 
-    <p>We never sell your data, never use it for advertising, and never share it with anyone except the two processors above (Firebase/Google and RevenueCat), strictly to run the app. Thumka does not use Apple's Advertising Identifier or Android's Advertising ID, and does not request App Tracking Transparency permission, because we do not track you across other apps or websites.</p>
+    <p>We never sell your data, never use it for advertising, and never share it with anyone except the processors described above, such as Firebase/Google where configured and RevenueCat for purchases, strictly to run the app. Thumka does not use Apple's Advertising Identifier or Android's Advertising ID, and does not request App Tracking Transparency permission, because we do not track you across other apps or websites.</p>
 
     <h3>Support requests</h3>
     <p>Thumka has no ticket system and stores no email address in the app. When you tap <strong>Report an issue by email</strong> in Settings, Thumka opens an editable draft in your chosen email app. The draft includes your app version and, when available, an anonymous billing reference that lets us find a purchase problem. It also offers a small text attachment with app/device status, current thermal and Low Power state, and a bounded list of recent app-owned screen or feature events. The attachment never includes your videos, filenames, paths, URLs, photo identifiers, billing or installation identifiers, or raw analytics. <strong>Nothing is sent automatically.</strong> You can read or edit the draft, remove the attachment, or discard the report. If you send it, we receive your email address and the material you chose to include in the ordinary way that emailing someone gives them your address. We use support reports only to answer and diagnose the issue, not for advertising or tracking.</p>
@@ -322,9 +322,9 @@
     <h3>Your choices</h3>
     <ul>
       <li><strong>Delete your videos and practice data:</strong> Settings &rarr; Delete Library &amp; Practice Data, any time, right on your device. This removes the videos stored on the device along with your notes, loop sections and practice history. It does <em>not</em> cancel a purchase, and it does <em>not</em> reset the free-import count.</li>
-      <li><strong>Turn off analytics:</strong> Settings &rarr; Privacy. Nothing further is collected after that.</li>
+      <li><strong>Control support diagnostics:</strong> the support message and attachment are visible before sending. You can edit the message, remove the attachment, or discard the report.</li>
       <li><strong>Stop future collection:</strong> delete the app. On Android, the one-way device quota record remains so reinstalling cannot reset the free allowance.</li>
-      <li><strong>Ask about data already collected:</strong> email us (below). Records already held by Apple, Google, RevenueCat or Firebase live in those companies' systems, not inside Thumka, so the app itself cannot reach in and erase them — but tell us what you need and we will make the request we are able to make.</li>
+      <li><strong>Ask about data already collected:</strong> email us (below). Records already held by Apple, Google, RevenueCat or Firebase where enabled live in those companies' systems, not inside Thumka, so the app itself cannot reach in and erase them — but tell us what you need and we will make the request we are able to make.</li>
     </ul>
 
     <h3>Children</h3>
