@@ -268,12 +268,12 @@
   <section id="privacy" class="doc" aria-labelledby="privacy-h">
     <span class="eyebrow">Document 1 of 3</span>
     <h2 id="privacy-h">Privacy Policy</h2>
-    <p><em>Last updated: August 24, 2026</em></p>
+    <p><em>Last updated: August 25, 2026</em></p>
 
     <p>Thumka works without an account. There is no sign-up, no login, no profile, and no server holding your videos. Thumka does not ask for your name, email, or phone number. This policy explains the little data that does exist, and where it goes.</p>
 
     <h3>Your videos never leave your device</h3>
-    <p>Every video you import — from your photo library, your files, a share from another app, or a direct link — is stored locally in Thumka's own storage on your device. Your video content, filenames, URLs, notes, loop boundaries, AI pose results, and exact practice history are never uploaded to Thumka or Firebase. The current iOS release does not upload product analytics. It keeps only a small sanitized activity log on the device for an optional support attachment.</p>
+    <p>Every video you import — from your photo library, your files, a share from another app, or a direct link — is stored locally in Thumka's own storage on your device. Your video content, filenames, URLs, loop boundaries, AI pose results, and exact practice history are not uploaded to Thumka, Google, RevenueCat, or another analytics service. The current iOS release does not upload product analytics. On Android, Google ML Kit performs pose detection on the device; Google documents that ML Kit sends limited operational information described below, not the video or detected pose.</p>
 
     <h3>What we do collect</h3>
     <div class="table-wrap">
@@ -283,19 +283,19 @@
         </thead>
         <tbody>
           <tr>
-            <td>Usage &amp; feature events</td>
-            <td>On iOS 1.2.1, Firebase Analytics is not configured and no usage or feature event is uploaded to Google. A small sanitized recent-activity log stays on the device and is available only as an optional support attachment. On another platform where Firebase is configured, Thumka may send bounded events such as app sessions, screen and feature use, coarse duration buckets, purchase outcomes and selected settings.</td>
-            <td>For the current iOS release, the log is not transmitted unless you deliberately attach it to a support email. Where Firebase is configured on another platform, events may be associated with a Firebase-generated app-instance identifier, never a Thumka account, name, email, advertising identifier, RevenueCat billing ID, filename, video ID, URL, media or pose result.</td>
+            <td>On-device activity log</td>
+            <td>The current iOS and Android releases do not configure Firebase product analytics. Thumka keeps a small, bounded and sanitized recent-activity log on your device so an issue report can say which screen or feature was in use. It is written only after an app action, not from video frames, camera frames, playback timers, or a background network job.</td>
+            <td>It stays on your device unless you deliberately attach and send it in an issue report. It contains no account, advertising identifier, billing identifier, filename, path, URL, video identifier, media, pose result, exact playback position, or free-form error.</td>
           </tr>
           <tr>
             <td>Diagnostics</td>
-            <td>The current iOS release does not use Firebase Crashlytics and does not automatically upload Thumka crash stack traces. Apple may provide Thumka with aggregated, opt-in App Store diagnostics under Apple's own privacy controls. A support report sends diagnostics only when you deliberately choose to send it.</td>
-            <td>The optional support attachment is associated with the email you choose to send. It is not sent in the background and can be removed before sending.</td>
+            <td>The current iOS and Android releases do not use Firebase Crashlytics and do not automatically upload Thumka crash stack traces. On Android, Google ML Kit may collect device and app information, performance metrics, API configuration, feature input and output sizes, event types, and error codes for diagnostics and usage analytics when AI Steps pose detection is used. Google says this data is encrypted in transit and is not shared with third parties. Apple or Google may also provide aggregated store diagnostics under their own privacy controls.</td>
+            <td>ML Kit uses per-installation identifiers not intended to identify a person or physical device. The optional Thumka support attachment is associated with the email you choose to send; it is not sent in the background and can be removed before sending.</td>
           </tr>
           <tr>
             <td>Configuration</td>
-            <td>The current iOS release does not configure Firebase Remote Config and uses bundled fallback settings, so it creates no Firebase installation identifier or config fetch. Another platform may use Remote Config where its Firebase setup is enabled.</td>
-            <td>No Firebase configuration data is transmitted by the current iOS release.</td>
+            <td>Thumka's product settings are bundled with the app. The current iOS and Android releases do not configure Firebase Analytics, Firebase Crashlytics, or product Remote Config. Google documents that Android ML Kit Pose Detection internally uses Firebase Remote Config and Firebase Installations for remote-configuration diagnostics.</td>
+            <td>This limited ML Kit configuration data is associated with an app installation, not a Thumka account, name, email, advertising identifier, or video.</td>
           </tr>
           <tr>
             <td>Purchase records</td>
@@ -303,15 +303,15 @@
             <td>Not by us. Apple or Google knows the purchase belongs to your store account, because they took the payment. RevenueCat sees only the anonymous ID and the store receipt.</td>
           </tr>
           <tr>
-            <td>Free-import count and app-scoped device ID</td>
-            <td>A single number: how many videos have ever been imported on this device. It exists so the five free imports cannot be reset by deleting and reinstalling the app. On iOS the count stays on the device. On Android, Thumka sends the app-scoped Android device ID with a Google Play Integrity token to our quota service. The service immediately converts the ID into a one-way keyed value and stores only that value, the count, and random retry IDs — never the raw device ID, video, filename, or URL.</td>
-            <td>Not to your name or contact details. The Android record distinguishes one device for fraud prevention, and Google verifies that the request comes from the genuine Play-installed app on a recognized device.</td>
+            <td>Free-import count</td>
+            <td>A single number records how many videos have been imported on the device. It is stored locally on both iOS and Android and may also be included in the device's ordinary app backup. Thumka does not send an Android ID, Apple device identifier, or Play Integrity token to a quota service.</td>
+            <td>It is local app state, not linked to a name, account, contact detail, or advertising identifier.</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <p>We never sell your data, never use it for advertising, and never share it with anyone except the processors described above, such as Firebase/Google where configured and RevenueCat for purchases, strictly to run the app. Thumka does not use Apple's Advertising Identifier or Android's Advertising ID, and does not request App Tracking Transparency permission, because we do not track you across other apps or websites.</p>
+    <p>We never sell your data and never use it for advertising. RevenueCat processes purchase status only to provide and restore Pro access. Thumka disables RevenueCat's automatic device-identifier collection and diagnostics. Thumka does not use Apple's Advertising Identifier or Android's Advertising ID, and does not request App Tracking Transparency permission, because we do not track you across other apps or websites. Google's current ML Kit disclosure is available at <a href="https://developers.google.com/ml-kit/android-data-disclosure" target="_blank" rel="noopener">developers.google.com/ml-kit/android-data-disclosure</a>.</p>
 
     <h3>Support requests</h3>
     <p>Thumka has no ticket system and stores no email address in the app. When you tap <strong>Report an issue by email</strong> in Settings, Thumka opens an editable draft in your chosen email app. The draft includes your app version and, when available, an anonymous billing reference that lets us find a purchase problem. It also offers a small text attachment with app/device status, current thermal and Low Power state, and a bounded list of recent app-owned screen or feature events. The attachment never includes your videos, filenames, paths, URLs, photo identifiers, billing or installation identifiers, or raw analytics. <strong>Nothing is sent automatically.</strong> You can read or edit the draft, remove the attachment, or discard the report. If you send it, we receive your email address and the material you chose to include in the ordinary way that emailing someone gives them your address. We use support reports only to answer and diagnose the issue, not for advertising or tracking.</p>
@@ -323,8 +323,8 @@
     <ul>
       <li><strong>Delete your videos and practice data:</strong> Settings &rarr; Delete Library &amp; Practice Data, any time, right on your device. This removes the videos stored on the device along with your notes, loop sections and practice history. It does <em>not</em> cancel a purchase, and it does <em>not</em> reset the free-import count.</li>
       <li><strong>Control support diagnostics:</strong> the support message and attachment are visible before sending. You can edit the message, remove the attachment, or discard the report.</li>
-      <li><strong>Usage analytics on iOS:</strong> the current iOS release sends no usage analytics to Firebase. Deleting the app removes its local support log. On Android, the one-way device quota record remains so reinstalling cannot reset the free allowance.</li>
-      <li><strong>Ask about data already collected:</strong> email us (below). Purchase or support records already held by Apple, Google, RevenueCat or your email provider live in those companies' systems, not inside Thumka, so the app itself cannot reach in and erase them — but tell us what you need and we will make the request we are able to make.</li>
+      <li><strong>Stop local diagnostics:</strong> Delete Library &amp; Practice Data removes the current local activity log, and deleting the app removes its remaining local data subject to your device's backup settings.</li>
+      <li><strong>Ask about purchase or support data:</strong> email us below. Store and RevenueCat purchase records live in those companies' systems. An email report lives in the sender's and recipient's email systems.</li>
     </ul>
 
     <h3>Children</h3>
@@ -348,7 +348,7 @@
     <p>Videos you import remain entirely your property. Thumka claims no rights over them — they're stored locally on your device and we never access them.</p>
 
     <h3>The free allowance</h3>
-    <p>Thumka is free to use for your first five video <em>imports</em> on a device. Imports, not videos: the count goes up when an import succeeds and never comes back down, so deleting a video does not return an import. A cancelled or failed import doesn't count, and the sample clip Thumka ships with doesn't either. The count is kept locally on iOS and by Thumka's protected quota service on Android, and is not reset by reinstalling. Pro removes the limit.</p>
+    <p>Thumka is free to use for your first five video <em>imports</em> on a device. Imports, not videos: the count goes up when an import succeeds and never comes back down, so deleting a video does not return an import. A cancelled or failed import doesn't count, and the sample clip Thumka ships with doesn't either. The count is kept locally on both iOS and Android and may be restored by ordinary device backup. Pro removes the limit.</p>
     <p>This is a permanent free allowance, not a trial. Nothing expires and nothing starts billing you on its own.</p>
 
     <h3>Purchases</h3>
@@ -383,7 +383,7 @@
       <a class="btn" href="mailto:jakhotiamayuresh@gmail.com">Email us →</a>
     </div>
 
-    <p>Thumka has no account and no support queue — just this address. Tapping <strong>Report an issue by email</strong> in Settings opens an editable draft for this address. Apple Mail receives a sanitized <code>Thumka-Diagnostics.txt</code> attachment; when Apple Mail is not configured, Thumka uses the system share sheet so another mail app can receive the same text and attachment. Nothing is sent until you choose an app and press Send. You can edit the message, remove the attachment, or discard it.</p>
+    <p>Thumka has no account and no support queue — just this address. Tapping <strong>Report an issue by email</strong> in Settings opens an editable draft or the system chooser with a sanitized <code>Thumka-Diagnostics.txt</code> attachment. Nothing is sent until you choose a mail app and press Send. You can edit the message, remove the attachment, or discard it.</p>
 
     <h3>Common questions</h3>
     <dl class="faq">
@@ -406,18 +406,18 @@
       <dd>No. Lifetime and Founding Lifetime are one-time purchases with no renewal.</dd>
 
       <dt>How do I get my five free imports back?</dt>
-      <dd>You can't, and that's deliberate. The count is tied to the device and never goes down, so deleting videos, clearing app data or reinstalling won't reset it. Pro removes the limit entirely.</dd>
+      <dd>The local count never goes down when you delete a video. An ordinary device backup may restore it when the app is restored. Pro removes the limit entirely.</dd>
 
       <dt>How do I delete my videos and practice data?</dt>
-      <dd>Settings &rarr; Delete Library &amp; Practice Data. It removes the videos on the device plus your notes, loop sections and practice history. Your purchase is unaffected, and the free-import count stays where it is.</dd>
+      <dd>Settings &rarr; Delete Library &amp; Practice Data. It removes the videos on the device plus loop sections, AI Steps, local diagnostics and practice history. Your purchase is unaffected, and the free-import count stays where it is.</dd>
 
-      <dt>Does the iPhone app send usage analytics?</dt>
-      <dd>No. The current iOS release does not configure Firebase Analytics or Remote Config. Its sanitized activity log stays on the phone unless you deliberately attach it to a support email.</dd>
+      <dt>Does Thumka upload analytics?</dt>
+      <dd>The current iOS and Android releases do not run Firebase product analytics. Their small app-owned diagnostic timeline stays on the device and leaves only if you deliberately include it in an issue report. On Android, the Google ML Kit SDK used for on-device pose detection sends limited installation, configuration, performance, event, and error diagnostics as described above; it does not receive your video or pose results.</dd>
     </dl>
   </section>
 </main>
 
 <footer>
   <span>© 2026 Thumka. All rights reserved.</span>
-  <span>Last updated August 24 2026</span>
+  <span>Last updated August 25 2026</span>
 </footer>
